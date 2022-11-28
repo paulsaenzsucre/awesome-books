@@ -16,9 +16,7 @@ function showBook(book) {
     // remove the book from the screen
     div.remove(book.id);
     // remove the book from the local storage
-    const newArray = books.filter((book2) => {
-      return book2.id !== book.id;
-    });
+    const newArray = books.filter((book2) => book2.id !== book.id );
     localStorage.setItem('books', JSON.stringify(newArray));
   });
   div.appendChild(element);
