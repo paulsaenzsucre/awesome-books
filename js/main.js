@@ -16,8 +16,7 @@ function showBook(book) {
     // remove the book from the screen
     div.remove(book.id);
     // remove the book from the local storage
-    const newArray = books.filter((book2) => book2.id !== book.id);
-    localStorage.setItem('books', JSON.stringify(newArray));
+    removeBook(book.id);
   });
   div.appendChild(element);
   element = document.createElement('hr');
@@ -38,6 +37,10 @@ window.addEventListener('load', () => {
 
 document.getElementById('form').addEventListener('submit', (e) => {
   e.preventDefault();
+  addBook();
+});
+
+function addBook() {
   const randomId = Math.floor(Math.random() * 100);
   const element = {
     id: randomId,
@@ -52,4 +55,9 @@ document.getElementById('form').addEventListener('submit', (e) => {
   document.getElementById('author').value = '';
 
   showBook(element);
-});
+}
+
+function removeBook(id) {
+  const newArray = books.filter((book2) => book2.id !== id);
+  localStorage.setItem('books', JSON.stringify(newArray));
+}
