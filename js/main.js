@@ -1,4 +1,4 @@
-var books = [];
+let books = [];
 
 function showBook(book) {
   let element;
@@ -16,9 +16,11 @@ function showBook(book) {
     // remove the book from the screen
     div.remove(book.id);
     // remove the book from the local storage
-    const newArray = books.filter((book2) => {book2.id != book.id;});
+    const newArray = books.filter((book2) => {
+      return book2.id !== book.id;
+    });
     localStorage.setItem('books', JSON.stringify(newArray));
-  })
+  });
   div.appendChild(element);
   element = document.createElement('hr');
   div.appendChild(element);
@@ -31,19 +33,19 @@ window.addEventListener('load', () => {
     books = [];
   }
 
-  books.forEach(element => {
+  books.forEach((element) => {
     showBook(element);
   });
 });
 
 document.getElementById('form').addEventListener('submit', (e) => {
   e.preventDefault();
-  let random_id = Math.floor(Math.random() * 100);
-  const element ={
-    id: random_id,
+  const randomId = Math.floor(Math.random() * 100);
+  const element = {
+    id: randomId,
     title: document.getElementById('title').value,
     author: document.getElementById('author').value,
-  }
+  };
   books.push(element);
 
   localStorage.setItem('books', JSON.stringify(books));
