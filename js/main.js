@@ -17,9 +17,7 @@ function showBook(book) {
     div.remove(book.id);
     // remove the book from the local storage
     const newArray = books.filter((book2) => {book2.id != book.id;});
-
     localStorage.setItem('books', JSON.stringify(newArray));
-
   })
   div.appendChild(element);
   element = document.createElement('hr');
@@ -36,7 +34,7 @@ window.addEventListener('load', () => {
   books.forEach(element => {
     showBook(element);
   });
-})
+});
 
 document.getElementById('form').addEventListener('submit', (e) => {
   e.preventDefault();
@@ -46,14 +44,12 @@ document.getElementById('form').addEventListener('submit', (e) => {
     title: document.getElementById('title').value,
     author: document.getElementById('author').value,
   }
-  books.push(
-    element
-  );
+  books.push(element);
 
   localStorage.setItem('books', JSON.stringify(books));
 
   document.getElementById('title').value = '';
-  document.getElementById('author').value = ''
+  document.getElementById('author').value = '';
 
   showBook(element);
-})
+});
