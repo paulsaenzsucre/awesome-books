@@ -2,6 +2,17 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 h1 {
   text-align: center;
 }
@@ -45,4 +56,30 @@ h1 {
 
 #book-cont {
   border: black solid 0.2rem;
+  width: 60%;
+}
+
+form {
+  width: 240px;
+}
+
+.hr-tag {
+  margin-top: 40px;
+  width: 15rem;
+  height: 2px;
+}
+
+.form-title {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.form-element {
+  width: 240px;
+  margin:2px
+}
+
+#add-btn {
+  float:right;
+  margin-top: 5px;
 }

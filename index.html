@@ -10,21 +10,25 @@
 </head>
 
 <body>
-  <h1>Awesome Books</h1>
+  <div class="container">
+    <h1>All awesome books</h1>
   <section id="book-cont">
 
   </section>
+  <hr class="hr-tag"/>
   <form action="" id="form">
+    <h2 class="form-title">Add a new book</h2>
     <div>
-      <input type="text" id="title" placeholder="Title" required>
+      <input type="text" id="title" placeholder="Title" class="form-element" required>
     </div>
     <div>
-      <input type="text" id="author" placeholder="Author" required>
+      <input type="text" id="author" placeholder="Author" class="form-element" required>
     </div>
     <div>
-      <input type="submit" id="add-btn" title="Add">
+      <input type="submit" id="add-btn" value="Add"/>
     </div>
   </form>
+  </div>
 
   <script src="js/main.js"></script>
 </body>

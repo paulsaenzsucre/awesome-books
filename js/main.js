@@ -1,15 +1,16 @@
+let books = new bookCollection();
+
 class bookCollection {
   #index;
   books;
 
-  constructor(books = []){
+  constructor(books = []) {
     this.#index = 0;
     this.books = books;
-    // localStorage.setItem('books', JSON.stringify(this.books));
   }
 
   addBook(tit, auth) {
-    let newId = (this.books===null || this.books.length===0) ? 0 : this.books[this.books.length-1].id + 1;
+    let newId = (this.books === null || this.books.length === 0) ? 0 : this.books[this.books.length - 1].id + 1;
     const element = {
       id: newId,
       title: tit,
@@ -17,7 +18,6 @@ class bookCollection {
     };
 
     this.books.push(element);
-  
     localStorage.setItem('books', JSON.stringify(this.books));
     this.showBook(element);
   }
@@ -25,18 +25,18 @@ class bookCollection {
   showBook(book) {
     let element;
     const div = document.createElement('div');
-    div.setAttribute('class','book-card');
+    div.setAttribute('class', 'book-card');
     element = document.createElement('p');
     element.appendChild(document.createTextNode(book.title));
-    element.setAttribute('class','book-title')
+    element.setAttribute('class', 'book-title')
     div.appendChild(element);
     element = document.createElement('p');
     element.appendChild(document.createTextNode(book.author));
-    element.setAttribute('class','book-author');
+    element.setAttribute('class', 'book-author');
     div.appendChild(element);
     element = document.createElement('button');
     element.setAttribute('type', 'button');
-    element.setAttribute('class','book-btn');
+    element.setAttribute('class', 'book-btn');
     element.appendChild(document.createTextNode('Remove'));
     element.addEventListener('click', () => {
       // remove the book from the screen
@@ -45,8 +45,6 @@ class bookCollection {
       this.removeBook(book.id);
     });
     div.appendChild(element);
-    /*element = document.createElement('hr');
-    div.appendChild(element);*/
     document.getElementById('book-cont').appendChild(div);
   }
 
@@ -57,23 +55,16 @@ class bookCollection {
 
 }
 
-let books = new bookCollection();
-
 window.addEventListener('load', () => {
   let books = new bookCollection(JSON.parse(localStorage.getItem('books')));
-  console.log(books);
-
   books.books.forEach((element) => {
-    console.log('showing elements');
     books.showBook(element);
   });
 });
 
 document.getElementById('form').addEventListener('submit', (e) => {
   e.preventDefault();
-  // trial let books = new bookCollection(JSON.parse(localStorage.getItem('books')));
   books.addBook(document.getElementById('title').value, document.getElementById('author').value);
-
-  document.getElementById('title').value='';
-  document.getElementById('author').value='';
+  document.getElementById('title').value = '';
+  document.getElementById('author').value = '';
 });
