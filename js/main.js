@@ -58,12 +58,12 @@ class BookCollection {
 let books = new BookCollection();
 
 window.addEventListener('load', () => {
-  if (JSON.parse(localStorage.getItem('books')) !== null) {   
+  if (JSON.parse(localStorage.getItem('books')) !== null) {
     books = new BookCollection(JSON.parse(localStorage.getItem('books')));
     books.books.forEach((element) => {
       books.showBook(element);
     });
-  }else {
+  } else {
     books = new BookCollection();
   }
 });
