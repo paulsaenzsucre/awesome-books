@@ -10,7 +10,7 @@ class BookCollection {
 
   addBook(tit, auth) {
     const newId = (this.books === null || this.books.length === 0) ? 0
-          : this.books[this.books.length - 1].id + 1;
+      : this.books[this.books.length - 1].id + 1;
     const element = {
       id: newId,
       title: tit,
