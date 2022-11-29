@@ -1,16 +1,16 @@
-let books = new bookCollection();
-
 class bookCollection {
   #index;
+
   books;
 
-  constructor(books = []) {
+  Constructor(books = []) {
     this.#index = 0;
     this.books = books;
   }
 
   addBook(tit, auth) {
-    let newId = (this.books === null || this.books.length === 0) ? 0 : this.books[this.books.length - 1].id + 1;
+    const newId = (this.books === null || this.books.length === 0) ? 0 :
+     this.books[this.books.length - 1].id + 1;
     const element = {
       id: newId,
       title: tit,
@@ -28,7 +28,7 @@ class bookCollection {
     div.setAttribute('class', 'book-card');
     element = document.createElement('p');
     element.appendChild(document.createTextNode(book.title));
-    element.setAttribute('class', 'book-title')
+    element.setAttribute('class', 'book-title');
     div.appendChild(element);
     element = document.createElement('p');
     element.appendChild(document.createTextNode(book.author));
@@ -52,11 +52,12 @@ class bookCollection {
     const newArray = this.books.filter((book2) => book2.id !== id);
     localStorage.setItem('books', JSON.stringify(newArray));
   }
-
 }
 
+const books = new bookCollection();
+
 window.addEventListener('load', () => {
-  let books = new bookCollection(JSON.parse(localStorage.getItem('books')));
+  const books = new bookCollection(JSON.parse(localStorage.getItem('books')));
   books.books.forEach((element) => {
     books.showBook(element);
   });
