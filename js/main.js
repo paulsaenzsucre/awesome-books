@@ -3,7 +3,7 @@ class BookCollection {
 
   books;
 
-  Constructor(books = []) {
+  constructor(books = []) {
     this.#index = 0;
     this.books = books;
   }
@@ -51,16 +51,21 @@ class BookCollection {
   removeBook(id) {
     const newArray = this.books.filter((book2) => book2.id !== id);
     localStorage.setItem('books', JSON.stringify(newArray));
+    this.books = newArray;
   }
 }
 
-const books = new BookCollection();
+let books = new BookCollection();
 
 window.addEventListener('load', () => {
-  const books = new BookCollection(JSON.parse(localStorage.getItem('books')));
-  books.books.forEach((element) => {
-    books.showBook(element);
-  });
+  if (JSON.parse(localStorage.getItem('books')) !== null) {   
+    books = new BookCollection(JSON.parse(localStorage.getItem('books')));
+    books.books.forEach((element) => {
+      books.showBook(element);
+    });
+  }else {
+    books = new BookCollection();
+  }
 });
 
 document.getElementById('form').addEventListener('submit', (e) => {
