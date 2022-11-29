@@ -1,4 +1,3 @@
-
 class bookCollection {
   #index;
   books;
@@ -26,14 +25,18 @@ class bookCollection {
   showBook(book) {
     let element;
     const div = document.createElement('div');
+    div.setAttribute('class','book-card');
     element = document.createElement('p');
     element.appendChild(document.createTextNode(book.title));
+    element.setAttribute('class','book-title')
     div.appendChild(element);
     element = document.createElement('p');
     element.appendChild(document.createTextNode(book.author));
+    element.setAttribute('class','book-author');
     div.appendChild(element);
     element = document.createElement('button');
     element.setAttribute('type', 'button');
+    element.setAttribute('class','book-btn');
     element.appendChild(document.createTextNode('Remove'));
     element.addEventListener('click', () => {
       // remove the book from the screen
@@ -42,8 +45,8 @@ class bookCollection {
       this.removeBook(book.id);
     });
     div.appendChild(element);
-    element = document.createElement('hr');
-    div.appendChild(element);
+    /*element = document.createElement('hr');
+    div.appendChild(element);*/
     document.getElementById('book-cont').appendChild(div);
   }
 
@@ -53,6 +56,8 @@ class bookCollection {
   }
 
 }
+
+let books = new bookCollection();
 
 window.addEventListener('load', () => {
   let books = new bookCollection(JSON.parse(localStorage.getItem('books')));
@@ -66,7 +71,9 @@ window.addEventListener('load', () => {
 
 document.getElementById('form').addEventListener('submit', (e) => {
   e.preventDefault();
-  // trial
-  let books = new bookCollection(JSON.parse(localStorage.getItem('books')));
+  // trial let books = new bookCollection(JSON.parse(localStorage.getItem('books')));
   books.addBook(document.getElementById('title').value, document.getElementById('author').value);
+
+  document.getElementById('title').value='';
+  document.getElementById('author').value='';
 });

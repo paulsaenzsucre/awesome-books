@@ -1,3 +1,48 @@
-body {
-  padding: 20px;
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+}
+
+.book-card {
+  position:relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: lightskyblue;
+  padding: 0 1rem;
+}
+
+.book-card:nth-child(even) {
+  background: antiquewhite;
+}
+
+.book-title,
+.book-author {
+  display: inline;
+}
+
+.book-title::after {
+  content: '"';
+}
+
+.book-title::before {
+  content: '"';
+}
+
+.book-author::before {
+  content: 'by';
+  margin: 0 .5rem;
+}
+
+.book-btn {
+  position: absolute;
+  right: 1rem;
+  padding: 0.5rem 2rem;
+}
+
+#book-cont {
+  border: black solid 0.2rem;
 }
