@@ -1,4 +1,4 @@
-class bookCollection {
+class BookCollection {
   #index;
 
   books;
@@ -9,8 +9,8 @@ class bookCollection {
   }
 
   addBook(tit, auth) {
-    const newId = (this.books === null || this.books.length === 0) ? 0 :
-     this.books[this.books.length - 1].id + 1;
+    const newId = (this.books === null || this.books.length === 0) ? 0
+          : this.books[this.books.length - 1].id + 1;
     const element = {
       id: newId,
       title: tit,
@@ -54,10 +54,10 @@ class bookCollection {
   }
 }
 
-const books = new bookCollection();
+const books = new BookCollection();
 
 window.addEventListener('load', () => {
-  const books = new bookCollection(JSON.parse(localStorage.getItem('books')));
+  const books = new BookCollection(JSON.parse(localStorage.getItem('books')));
   books.books.forEach((element) => {
     books.showBook(element);
   });
