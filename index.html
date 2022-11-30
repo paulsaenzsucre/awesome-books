@@ -14,9 +14,9 @@
     <header class="header">
       <h2>Awesome books</h2>
       <ul class="header-ul">
-        <li class="header-list"><a href="#" class="header-link">List</a> <hr class="menu-separator"></li>
-        <li class="header-list"><a href="#" class="header-link">Add new</a><hr class="menu-separator"></li>
-        <li class="header-list"><a href="#" class="header-link">Contact</a></li>
+        <li class="header-list"><a id="list-link" href="#" class="header-link">List</a> <hr class="menu-separator"></li>
+        <li class="header-list"><a id="add-link" href="#" class="header-link">Add new</a><hr class="menu-separator"></li>
+        <li class="header-list"><a id="contact-link" href="#" class="header-link">Contact</a></li>
       </ul>
     </header>
     <h4 class="date">March 19th 2021, 9:25:32 am</h4>
@@ -25,8 +25,8 @@
     <section id="book-cont">
       <h1>All awesome books</h1>
     </section>
-    <hr class="hr-tag"/>
-    <form action="" id="form">
+    
+    <form action="" id="form" class="hidden">
       <h2 class="form-title">Add a new book</h2>
       <div>
         <input type="text" id="title" placeholder="Title" class="form-element" required>
@@ -38,7 +38,7 @@
         <input type="submit" id="add-btn" value="Add"/>
       </div>
     </form>
-    <section>
+    <section id="contact" class="hidden">
       <h2 class="form-title">Contact information</h2>
       <p>Do have any questions or you, just want to say "Hello"?</p>
       <p>You can reach out to us!</p>
