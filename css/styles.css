@@ -33,6 +33,7 @@ h1 {
 .book-title,
 .book-author {
   display: inline;
+  text-transform: capitalize;
 }
 
 .book-title::after {
@@ -104,7 +105,7 @@ form {
 
 .header-list {
   list-style-type: none;
-  padding-left:5px;
+  padding-left: 5px;
   padding-right: 5px;
   display: flex;
   align-items: center;
@@ -128,7 +129,7 @@ footer {
 }
 
 footer p {
-  padding:20px
+  padding: 20px;
 }
 
 .date {

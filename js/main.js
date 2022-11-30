@@ -58,6 +58,9 @@ class BookCollection {
 let books = new BookCollection();
 
 window.addEventListener('load', () => {
+  // display the date
+  document.getElementById('date').innerText = new Date().toUTCString()
+  // fetch data from local storage
   if (JSON.parse(localStorage.getItem('books')) !== null) {
     books = new BookCollection(JSON.parse(localStorage.getItem('books')));
     books.books.forEach((element) => {
@@ -92,15 +95,3 @@ document.getElementById('contact-link').addEventListener('click', () => {
   document.getElementById('form').classList.add('hidden');
   document.getElementById('contact').classList.remove('hidden');
 });
-
-/*
-let els=document.getElementsByClassName('header-link');
-Array.prototype.forEach.call(els, (element) => {
-  console.log("Hi");
-  element.addEventListener('click', () => {
-  document.getElementById('book-cont').classList.toggle('hidden');
-  document.getElementById('form').classList.toggle('hidden');
-  document.getElementById('contact').classList.toggle('hidden');
-  });
-});
-*/
