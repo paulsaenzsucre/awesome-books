@@ -11,23 +11,50 @@
 
 <body>
   <div class="container">
-    <h1>All awesome books</h1>
-  <section id="book-cont">
+    <header class="header">
+      <h2>Awesome books</h2>
+      <ul class="header-ul">
+        <li class="header-list"><a id="list-link" href="#" class="header-link">List</a>
+          <hr class="menu-separator">
+        </li>
+        <li class="header-list"><a id="add-link" href="#" class="header-link">Add new</a>
+          <hr class="menu-separator">
+        </li>
+        <li class="header-list"><a id="contact-link" href="#" class="header-link">Contact</a></li>
+      </ul>
+    </header>
+    <h4 class="date" id="date">March 19th 2021, 9:25:32 am</h4>
 
-  </section>
-  <hr class="hr-tag"/>
-  <form action="" id="form">
-    <h2 class="form-title">Add a new book</h2>
-    <div>
-      <input type="text" id="title" placeholder="Title" class="form-element" required>
-    </div>
-    <div>
-      <input type="text" id="author" placeholder="Author" class="form-element" required>
-    </div>
-    <div>
-      <input type="submit" id="add-btn" value="Add"/>
-    </div>
-  </form>
+
+    <section id="book-cont">
+      <h1>All awesome books</h1>
+    </section>
+
+    <form action="" id="form" class="hidden">
+      <h2 class="form-title">Add a new book</h2>
+      <div>
+        <input type="text" id="title" placeholder="Title" class="form-element" required>
+      </div>
+      <div>
+        <input type="text" id="author" placeholder="Author" class="form-element" required>
+      </div>
+      <div>
+        <input type="submit" id="add-btn" value="Add" />
+      </div>
+    </form>
+    <section id="contact" class="hidden">
+      <h2 class="form-title">Contact information</h2>
+      <p>Do have any questions or you, just want to say "Hello"?</p>
+      <p>You can reach out to us!</p>
+      <ul>
+        <li>Our e-mail: mail@mail.com</li>
+        <li>Our phone number: 00435486534422</li>
+        <li>Our address: Streetname 22, 84503 City, Country</li>
+      </ul>
+    </section>
+    <footer>
+      <p>Copyright (c) SomeBusiness 2022</p>
+    </footer>
   </div>
 
   <script src="js/main.js"></script>

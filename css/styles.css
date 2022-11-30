@@ -33,6 +33,7 @@ h1 {
 .book-title,
 .book-author {
   display: inline;
+  text-transform: capitalize;
 }
 
 .book-title::after {
@@ -82,4 +83,60 @@ form {
 #add-btn {
   float: right;
   margin-top: 5px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  box-shadow: 0 4px 2px -2px rgb(202, 201, 201);
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.header-ul {
+  display: flex;
+}
+
+.header h2 {
+  margin-top: 16px;
+}
+
+.header-list {
+  list-style-type: none;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.header-link {
+  text-decoration: none;
+  color: black;
+}
+
+.menu-separator {
+  height: 20px;
+  width: 2px;
+  margin-left: 10px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+footer p {
+  padding: 20px;
+}
+
+.date {
+  align-self: flex-end;
+  padding-right: 20px;
+}
+
+.hidden {
+  display: none;
 }
