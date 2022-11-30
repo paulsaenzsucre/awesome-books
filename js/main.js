@@ -59,7 +59,7 @@ let books = new BookCollection();
 
 window.addEventListener('load', () => {
   // display the date
-  document.getElementById('date').innerText = new Date().toUTCString()
+  document.getElementById('date').innerText = new Date().toUTCString();
   // fetch data from local storage
   if (JSON.parse(localStorage.getItem('books')) !== null) {
     books = new BookCollection(JSON.parse(localStorage.getItem('books')));
